@@ -16,7 +16,7 @@ library(ggplot2)
 
 viofamyearstate<-read.csv("viofamyearstate.csv")
 
-viofamyearstate<-select(viofamyearstate, -X)
+viofamyearstate<-select(viofamyearstate, -Id)
 
 options(shiny.sanitize.errors = FALSE)
 #-------------sidebar menu

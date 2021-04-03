@@ -1,0 +1,36 @@
+---
+title: "Facebook-Emanuel-Serrano"
+author: "David Jackson"
+date: "4/3/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(class)
+library(stringr)
+library(sf)
+library(shiny)
+library(shinydashboard)
+library(ggplot2)
+library(scales)
+library(dlookr)
+```
+
+## Import and Summary Stats: volenciafamiliarmap
+
+```{r}
+rm(list=ls())
+volencia <- read.csv("./volenciafamiliarmap.csv")
+dlookr::diagnose_numeric(volencia)
+```
+
+## Import and Summary Stats:  viofamyearstate.csv
+
+```{r}
+viofamyearstate <- read.csv("./viofamyearstate.csv")
+viofamyearstate <-viofamyearstate %>% select(-Id)
+dlookr::diagnose_numeric(viofamyearstate)
+```
+
